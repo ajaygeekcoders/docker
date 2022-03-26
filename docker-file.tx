@@ -1,0 +1,16 @@
+FROM node --> install node
+
+ENV MONGO_DB_USERNAME=admin \ --> set MONGO_DB_USERNAME
+    MONGO_DB_PWD=password --> set MONGO_DB_PWD
+
+RUN mkdir -p /home/app --> create /home/app folder
+
+COPY . /home/app --> copy current folder files to /home/app
+
+CMD ["node", "server.js"] --> start the app with: "node server.js" 
+
+Run inside docker container
+FROM, ENV, RUN
+
+RUN on HOST machine
+COPY

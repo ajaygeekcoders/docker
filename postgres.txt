@@ -1,0 +1,39 @@
+Open Terminal
+
+Link - 
+https://hub.docker.com/_/postgres
+
+Run -
+
+-d is used run the image in detach mode (background)
+> docket run -d postgres
+
+* Pull Command
+
+> docker pull postgres
+Above command will download the latest postgres in local docker
+
+> docker pull postgres:9.6
+Above command will download the specified version of postgres in local docker
+
+* Run Command
+
+> docker run postgres
+Above command will run the postgres and if not exist then dowload the latest and then run it
+
+> docker run postgres:9.6
+Above command will run the specified postgres version and if not exist then dowload the specified version and then run it
+
+Note: If facing issue in docker run command try below command
+
+To allow all connections without a password use:
+> docker run -e POSTGRES_HOST_AUTH_METHOD=trust postgres:9.6 (use the tag you need).
+
+To specify postgres password for the superuser, use:
+> docker run -e POSTGRES_PASSWORD=<your_password> postgres:9.6 (use the tag you need).
+
+
+Note: 
+1. Can also run multiple version of container separately like - docker run postgers:9.6 & docker run postgers:10.10
+2. On Success - You got a LOG: database system is ready to accept connections
+

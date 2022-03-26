@@ -1,0 +1,50 @@
+Open Terminal
+
+Link - 
+https://hub.docker.com/_/mongo
+https://hub.docker.com/_/mongo-express
+
+Run -
+
+-d is used run the image in detach mode (background)
+> docket pull mongo
+> docket run -d mongo
+
+mongo-express is use to view mongodb changes in UI
+> docket pull mongo-express
+> docket run -d mongo-express
+
+-e stands for envirnoment
+
+
+use this for setup -
+Create Network for mongo to connect both images
+> docker network create mongo-network
+Start mongodb container on mongo-network
+> docker run -d -p27017:27017 -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password --name mongodb --net mongo-network mongo
+Start mongo-express and connect with mongodb and mongo-network
+> docker run -d -p8081:8081 -e ME_CONFIG_MONGODB_ADMINUSERNAME=admin -e ME_CONFIG_MONGODB_ADMINPASSWORD=password -e ME_CONFIG_MONGODB_SERVER=mongodb --name mongo-express --net mongo-network mongo-express
+
+
+
+* Pull Command
+
+> docker pull mongo
+Above command will download the latest mongo in local docker
+
+> docker pull mongo:3.0
+Above command will download the specified version of mongo in local docker
+
+* Run Command
+
+> docker run mongo
+Above command will run the mongo and if not exist then dowload the latest and then run it
+
+> docker run mongo:3.0
+Above command will run the specified mongo version and if not exist then dowload the specified version and then run it
+
+
+Note: 
+1. Can also run multiple version of container separately like - docker run mongo:4.0 & docker run mongo:3.0
+2. On Success - You got a LOG: "ctx":"listener","msg":"Waiting for connections","attr":{"port":27017,"ssl":"off"}
+

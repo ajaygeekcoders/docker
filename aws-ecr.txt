@@ -1,0 +1,11 @@
+To store a docker image
+
+AWS uses ECR > Repositories
+
+In ECR Repositories we can store the same image with different versions and tags
+
+You can find the push command on aws ECR after you create a repository for your image
+
+To push a docker image from local to aws you need to have aws credential pre configured in your local for push command
+> AWS cli need to be installed
+> Credentials configured

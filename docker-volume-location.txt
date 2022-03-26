@@ -1,0 +1,11 @@
+In docker compose, we define volumes to store the persistent data from docker to our local machine like
+mongodb (db) data
+
+windows
+> C:\ProgramData\docker\volumes
+
+mac
+> var/lib/docker/volumes
+
+linux
+> var/lib/docker/volumes

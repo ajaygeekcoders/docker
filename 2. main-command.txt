@@ -1,0 +1,80 @@
+
+
+
+> docker ps
+It will show all running docker images
+> docker ps -a
+It will show all running and non-running images
+
+
+> docker pull
+It will download the mention image like > docker pull redis
+
+
+> docker run 
+It will run the mention image like > docker run redis
+It will run the  mention image in detach mode (background) like >  docker run -d redis
+`docker run -d redis` gives container id as output after running
+
+> docker run -d redis > -d to run redis container in detach mode (background)
+> docker run -d -p6001:6379 redis > -p6001:6379 to bind the host port to container port
+> docker run -d -p6001:6379 --name redis-new redis > --name to give a name to container
+
+
+
+> docker start
+It will start the docker container with `CONTAINER ID` like > docker start 652ec238ccc1
+To get the non-running container use >  docker ps -a
+
+
+> docker stop
+It will stop the docker container with `CONTAINER ID` like > docker stop 652ec238ccc1
+
+> docker exec -it
+It will open the terminal of the specified docker container like >  docker exec -it 652ec238ccc1 /bin/bash
+With docker name also you can open like 
+> docker exec -it redis-new /bin/bash
+or 
+> docker exec -it redis-new /bin/sh
+
+
+> docker logs
+It will show the logs of docker container like > docker logs 9c19673edbf1
+we can also use the name of the docker container like > docker logs redis-new
+
+
+> docker images
+It will show list of existing images
+
+
+> docker network ls
+show the list of available local network
+
+Link -  https://docs.docker.com/compose/
+> docker-compose 
+> docker-compose -f mongo.yaml up
+It run the yaml file which contain multiple instruction to setup a container instead of running one by one
+docker-compose also take of creating a network for like in case of mogodb and mongo-express
+
+> docker-compose -f mongo.yaml down
+It stops the container which is start by same `up` command
+It also remove the network which created during `up` command
+
+
+> docker build -t my-app:1.0 .
+dot . at last is a directory (. denotes current directory)
+After above command and image of project is created in image list which we can use to run like -> docker run my-app:1.0
+
+
+> docker rmi 49e4b429a7a5
+Using image id which you cen get from command > docker images
+But image might we used in containe (running or non-running) so, remove that first then image can be removed
+
+
+> docker rm 49e4b429a7a5
+Using container id which you cen get from command 
+> docker ps -a
+> docker ps -a | grep my-app
+But before deleting a container, a container need to be stopped
+
+

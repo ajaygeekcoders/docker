@@ -1,0 +1,35 @@
+Open Terminal
+
+Link - 
+https://hub.docker.com/_/redis
+
+Run 
+
+-d is used run the image in detach mode (background)
+> docket run -d redis
+
+-p to bind the container port with host port like 6000 is my port and 6379 is a redis contianer port
+> docker run -p6000:6379 redis
+> docker run -p6001:6379 redis:4.0
+
+
+* Pull Command
+
+> docker pull redis
+Above command will download the latest redis in local docker
+
+> docker pull redis:4.0
+Above command will download the specified version of redis in local docker
+
+* Run Command
+
+> docker run redis
+Above command will run the redis and if not exist then dowload the latest and then run it
+
+> docker run redis:4.0
+Above command will run the specified redis version and if not exist then dowload the specified version and then run it
+
+Note: 
+1. Can also run multiple version of container separately like - docker run redis & docker run redis:4.0
+2. On Success - You got a LOG: Ready to accept connections
+

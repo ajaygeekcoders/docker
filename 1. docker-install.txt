@@ -1,0 +1,23 @@
+
+YT LINK - 
+https://www.youtube.com/watch?v=3c-iBn73dDE
+
+Docker Toolbox > for older mac and windows to support docker
+
+Link For Docker Installation - 
+https://docs.docker.com/engine/install/
+
+Download the Community Edition - CE
+
+> Before installing docker -pre-requistie
+System must have virtualization enable
+Checkout out the system requirement to install docker for your envirnoment
+
+> Docker for mac 
+https://docs.docker.com/desktop/mac/install/
+
+> Docker for windows
+https://docs.docker.com/desktop/windows/install/
+
+> Docker for linux
+https://docs.docker.com/engine/install/
