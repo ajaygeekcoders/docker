@@ -36,6 +36,7 @@ With docker name also you can open like
 > docker exec -it redis-new /bin/bash
 or 
 > docker exec -it redis-new /bin/sh
+-it stands for interactive terminal
 
 
 > docker logs
